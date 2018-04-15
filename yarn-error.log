@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\maxma\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js run build:prod
+  C:\Program Files\nodejs\node.exe C:\Users\maxma\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test -- --watch
 
 PATH: 
   C:\Users\maxma\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\maxma\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Users\maxma\AppData\Local\Microsoft\WindowsApps;C:\Users\maxma\AppData\Roaming\npm;C:\Program Files\Heroku\bin;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -21,11 +21,12 @@ npm manifest:
     "author": "Maxim Malkhazov",
     "license": "MIT",
     "scripts": {
-      "serve": "live-server public/",
       "build:dev": "webpack",
       "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
-      "test": "jest --config=jest.config.json"
+      "test": "jest --config=jest.config.json",
+      "start": "node server/server.js",
+      "heroku-postbuild": "yarn run build:prod"
     },
     "dependencies": {
       "babel-cli": "^6.24.1",
@@ -36,12 +37,8 @@ npm manifest:
       "babel-preset-env": "^1.5.2",
       "babel-preset-react": "^6.24.1",
       "css-loader": "^0.28.11",
-      "enzyme": "^3.3.0",
-      "enzyme-adapter-react-16": "^1.1.1",
-      "enzyme-to-json": "^3.3.3",
+      "express": "^4.16.3",
       "extract-text-webpack-plugin": "^3.0.2",
-      "jest": "^22.4.3",
-      "live-server": "^1.2.0",
       "moment": "^2.21.0",
       "node-sass": "^4.7.2",
       "normalize.css": "^8.0.0",
@@ -53,14 +50,20 @@ npm manifest:
       "react-modal": "^3.3.2",
       "react-redux": "^5.0.7",
       "react-router-dom": "^4.2.2",
-      "react-test-renderer": "^16.3.0",
       "redux": "^3.7.2",
       "sass-loader": "^6.0.7",
       "style-loader": "^0.20.3",
       "uuid": "^3.2.1",
       "validator": "8.0.0",
       "webpack": "3.1.0",
-      "webpack-cli": "^2.0.12",
+      "webpack-cli": "^2.0.12"
+    },
+    "devDependencies": {
+      "enzyme": "^3.3.0",
+      "enzyme-adapter-react-16": "^1.1.1",
+      "enzyme-to-json": "^3.3.3",
+      "jest": "^22.4.3",
+      "react-test-renderer": "^16.3.0",
       "webpack-dev-server": "^2.5.1"
     }
   }
@@ -2809,7 +2812,7 @@ Lockfile:
       jest-message-util "^22.4.3"
       jest-regex-util "^22.4.3"
   
-  express@^4.16.2:
+  express@^4.16.2, express@^4.16.3:
     version "4.16.3"
     resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
     dependencies:
@@ -8429,7 +8432,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c webpack -p --env production
+  Arguments: /d /s /c jest --config=jest.config.json --watch
   Directory: C:\Users\maxma\OneDrive\Documents\Practice\projects\expenses-app
   Output:
   
