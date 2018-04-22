@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\maxma\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test -- --watch
+  C:\Program Files\nodejs\node.exe C:\Users\maxma\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js test
 
 PATH: 
   C:\Users\maxma\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\maxma\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Users\maxma\AppData\Local\Microsoft\WindowsApps;C:\Users\maxma\AppData\Roaming\npm;C:\Program Files\Heroku\bin;C:\Program Files\PostgreSQL\10\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -8557,9 +8557,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 3221225786
+  Exit code: 1
   Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c cross-env NODE_ENV=test jest --config=jest.config.json --watch
+  Arguments: /d /s /c cross-env NODE_ENV=test jest --config=jest.config.json
   Directory: C:\Users\maxma\OneDrive\Documents\Practice\projects\expenses-app
   Output:
   
