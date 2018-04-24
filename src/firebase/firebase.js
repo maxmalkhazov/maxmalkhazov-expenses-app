@@ -1,5 +1,6 @@
 import * as firebase from "firebase";
 
+
  const config = {
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
@@ -12,8 +13,9 @@ import * as firebase from "firebase";
 firebase.initializeApp(config);
 
 const database = firebase.database();
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
-export { firebase, database as default };
+export { firebase, googleAuthProvider, database as default };
 
 // database.ref("expenses").push({
 // 	description: "car payment",
