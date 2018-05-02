@@ -1,0 +1,28 @@
+.box-layout {
+	background-image: linear-gradient(to right, rgba(0,0,0,.4), rgba(0,0,0,.4)), url("/images/background.jpg");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	
+	&__box {
+		background: fade-out(#fff, .2);
+		border-radius: 5px;
+		text-align: center;
+		width: 30rem;
+		padding: $xl-size $l-size;
+	}
+	
+	&__title {
+		margin: 0;
+		line-heigth: 1;
+		font-weight: 300;
+		font-size: $font-size-xl;
+	}
+	
+	&__info {
+		margin: $m-size 0;
+	}
+}

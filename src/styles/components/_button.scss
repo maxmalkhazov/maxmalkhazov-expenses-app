@@ -1,0 +1,81 @@
+.btn {
+	
+	&,
+	&:link,
+	&:visited {
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1rem 2.5rem;
+		display: inline-block;
+		border-radius: 6.25rem;
+		transition: all .2s;
+		position: relative;
+		
+		// change for the <button> element
+		border: none;
+		cursor: pointer;
+	}
+	
+	&:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 .625rem 1.25rem rgba($black, .2);
+		
+		&::after {
+			transform: scale(1.2);
+			opacity: 0;
+		}
+	}
+	
+	&:active,
+	&:focus {
+		outline: none;
+		transform: translateY(-1px);
+		box-shadow: 0 .3rem .625rem rgba($black, .2);
+	}
+	
+	&--login {
+		background-color: $yellow;
+		color: $white;
+		
+		&::after {
+			background-color: $yellow;
+		}
+	}
+	
+	&--action {
+		background-color: $blue;
+		color: $white;
+		
+		&::after {
+			background-color: $blue;
+		}
+	}
+	
+	&--danger {
+		background-color: $red;
+		color: $white;
+		
+		&::after {
+			background-color: $red;
+		}
+	}
+	
+	&::after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 6.25rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all .4s;
+	}
+	
+	&--animated {
+		animation: moveInBottom .4s ease-out .75s;
+		animation-fill-mode: backwards;
+		
+	}
+}
