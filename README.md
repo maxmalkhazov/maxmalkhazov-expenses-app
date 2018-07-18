@@ -1,4 +1,5 @@
 # Expenses App
+
 *A simple responsive mobile app to create, edit, and keep track of expenses.*
 
 ## Built With
